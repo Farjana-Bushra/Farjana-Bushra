@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void modifyValue(int x) {
+    x = 10;
+}
+
+int factorial(int n) {
+    return (n == 0 || n == 1) ? 1 : n * factorial(n - 1);
+}
+
+void mergeValues(int *a, int *b) {
+    *a += *b;
+}
+
+int main() {
+    int num1 = 5;
+    modifyValue(num1);
+    printf("Call by Value - Original value: %d\n", num1);
+
+    int num2 = 5;
+    printf("Recursion - Factorial of %d: %d\n", num2, factorial(num2));
+
+    int num3 = 10, num4 = 5;
+    mergeValues(&num3, &num4);
+    printf("Reference - Merged value: %d\n", num3);
+
+    return 0;
+}
